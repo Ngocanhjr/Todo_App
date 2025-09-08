@@ -1,5 +1,0 @@
-com/rhna/todoapp/controller/TodoController.class
-com/rhna/todoapp/TodoappApplication.class
-com/rhna/todoapp/entity/TodoEntity.class
-com/rhna/todoapp/entity/TodoEntity$TodoEntityBuilder.class
-com/rhna/todoapp/repository/TodoRepository.class

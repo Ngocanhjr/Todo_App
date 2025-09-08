@@ -1,13 +1,12 @@
-CREATE DATABASE todoappdb;
+-- Initialize database with sample data
 
-use todoappdb;
+CREATE DATABASE IF NOT EXISTS todoappdb;
 
-select * from tbl_todos;
+USE todoappdb;
 
-insert into tbl_todos(title, completed)
-values("first todo", true);
+-- Insert some sample data if tables exist
+INSERT IGNORE INTO tbl_todos(title, completed)
+VALUES("first todo", true);
 
-insert into tbl_todos(title, completed)
-values("second todo", false);
-
-delete from tbl_todos where id = 2
+INSERT IGNORE INTO tbl_todos(title, completed)
+VALUES("demo", false);

@@ -1,0 +1,48 @@
+# Git files
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+README.md
+DOCKER.md
+step.md
+
+# IDE files
+.idea
+.vscode
+.settings
+.project
+.classpath
+*.iml
+*.iws
+*.ipr
+
+# Build artifacts (but keep the final JAR)
+todoapp/target/
+!todoapp/target/todoapp-0.0.1-SNAPSHOT.jar
+todoapp/build/
+**/node_modules/
+**/.mvn/wrapper/maven-wrapper.jar
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.pid
+
+# Docker files (don't include in context unless needed)
+.dockerignore
+docker-compose*.yml
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+img.png
