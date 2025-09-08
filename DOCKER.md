@@ -25,7 +25,7 @@ cd ..
 
 ### 3. Run with Docker Compose
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 This command will:
@@ -40,12 +40,12 @@ This command will:
 
 ### 4. Stop the Application
 ```bash
-docker-compose down
+docker compose down
 ```
 
 To remove volumes (⚠️ **this will delete all data**):
 ```bash
-docker-compose down -v
+docker compose down -v
 ```
 
 ---
@@ -111,22 +111,22 @@ The application supports the following environment variables:
 
 ### Check Container Status
 ```bash
-docker-compose ps
+docker compose ps
 ```
 
 ### View Application Logs
 ```bash
 # All services
-docker-compose logs
+docker compose logs
 
 # Todo app only
-docker-compose logs todo-app
+docker compose logs todo-app
 
 # MySQL only
-docker-compose logs mysql
+docker compose logs mysql
 
 # Follow logs in real-time
-docker-compose logs -f todo-app
+docker compose logs -f todo-app
 ```
 
 ---
@@ -135,14 +135,14 @@ docker-compose logs -f todo-app
 
 ### Rebuilding After Code Changes
 ```bash
-docker-compose down
-docker-compose up --build
+docker compose down
+docker compose up --build
 ```
 
 ### Running in Development Mode
 For development, you might want to mount the source code:
 ```bash
-# Create docker-compose.override.yml for development
+# Create docker compose.override.yml for development
 version: '3.8'
 services:
   todo-app:
@@ -164,24 +164,24 @@ services:
 sudo netstat -tulpn | grep :8080
 
 # Stop existing containers
-docker-compose down
+docker compose down
 ```
 
 #### 2. Database Connection Issues
 ```bash
 # Check MySQL container logs
-docker-compose logs mysql
+docker compose logs mysql
 
 # Ensure MySQL is healthy
-docker-compose ps
+docker compose ps
 ```
 
 #### 3. Build Issues
 ```bash
 # Clean build
-docker-compose down
+docker compose down
 docker system prune -a
-docker-compose up --build
+docker compose up --build
 ```
 
 #### 4. Permission Issues (Linux/macOS)
@@ -194,7 +194,7 @@ chmod +x todoapp/mvnw
 
 To connect to MySQL directly:
 ```bash
-docker-compose exec mysql mysql -u todouser -p todoappdb
+docker compose exec mysql mysql -u todouser -p todoappdb
 # Password: todopassword
 ```
 
@@ -216,10 +216,10 @@ docker-compose exec mysql mysql -u todouser -p todoappdb
 ### Backup
 ```bash
 # Backup MySQL data
-docker-compose exec mysql mysqldump -u todouser -p todoappdb > backup.sql
+docker compose exec mysql mysqldump -u todouser -p todoappdb > backup.sql
 
 # Restore MySQL data
-docker-compose exec -T mysql mysql -u todouser -p todoappdb < backup.sql
+docker compose exec -T mysql mysql -u todouser -p todoappdb < backup.sql
 ```
 
 ---
